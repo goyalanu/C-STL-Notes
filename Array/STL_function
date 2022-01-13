@@ -1,0 +1,215 @@
+Array
+Initiaizing array
+	1) Int basic[3] ={1,2,3};
+	2) array<int,4> a ={1,2,3,4}; - STL - static array
+	3) Int size = a.size();
+	4) Cout<<a.at(2); - what is the element at position 2
+	5) Cout<<a.empty(); - is array empty or not it return 0/1(0-false)
+	6) Cout<<a.front() - return first element of array
+	7) Cout<<a.back() - return last element of array
+	
+	
+Vector
+	1) Vector<int> v;
+	2) Vector<int>b(a); - it copy all elements of a vector to vector b.
+	3) Cout<<v.capacity() - to check the size of vector
+	4) Cout<<v.size(); - no of elements in vector
+	5) v.push_back(1); - to enter element in vector
+	6) Cout<<v.at(2); - what is the element at position 2
+	7) Cout<<a.front() - return first element of array
+	8) Cout<<a.back() - return last element of array
+	9) Cout<<v.pop_back() - it remove last element from vector
+	10) Vector<int> a(5,1); - it initialize the vector of size 5 with all element is 1;
+	11) Vector<int>b(a); - it copy all elements of a vector to vector b.
+	
+Deque
+	
+	1) Deque<int> d; - Intialization/Declration of Deque
+	2) d.push_back(1); - to insert element from back
+	3) d.push_front(2) - to insert element from front
+	4) d.pop_back(); - to delete element from back
+	5) d.at(1) - to check value at 1st position
+	6) d.front() - it return the value at first position
+	7) d.back() - it return the value at last position
+	8) d.empty() - it return empty or not(0&1)
+	9) d.size() - return the size of deque
+	10) d.erase(d.begin(),d.begin()+1) - it deletes the range of elements i.e - it start from begning and delete till secound argument
+	
+LIST
+	1) List<int> l; - Intialization/Declration of List
+	2) List<int> n(l); - it copy all element from list l to list n
+	3) List<int> n(5,100); - it creates a list which contain 100 (5 times)
+	4) l.push_back(1); - it pushes the element at back
+	5) l.push_front(2); - it pushes the element at front
+	6) l.erase(l.begin()); - it erase the first element
+	7) l.size() - it gives the size of list 
+
+
+Queue
+	1) Queue<string> q; - Intialization/Declration of QUEUE
+	2) q.push("Anu"); - pushing value in queue
+	3) q.push("Goel");- pushing value in queue
+	4) q.push("Notes");- pushing value in queue
+	5) q.size(); - return size of QUEUE
+	6) q.front() - return first element
+	7) q.pop(); - return last element
+	
+	
+Priority Queue
+	1) Priority_Queue<int> maxi; - heap intialization(by default max heap)
+	2) Priority_queue<int,vector<int>,greater<int> mini; - min heap inialization
+	3) Maxi.push(1); - insert element in queue
+	4) Maxi.push(3); - insert element in queue
+	5) Maxi.push(2); - insert element in queue
+	6) Maxi.push(0); - insert element in queue
+	7) For(int i=0;i<maxi.size();i++){ - it deletes all the element of queue
+	8) Cout<<maxi.pop();
+	9) }cout<<endl;
+	14) Maxi.top() - it return the top element
+	15) Maxi.empty() - it return 0 or 1 
+
+SET
+	1) The set stores the elements in sorted order.
+	2) All the elements in a set have unique values.
+	3) The value of the element cannot be modified once it is added to the set, though it is possible to remove and then add the modified value of that element. Thus, the values are immutable.
+	4) Sets follow the Binary search tree implementation.
+	5) The values in a set are unindexed.
+  Set<int> s; - Set initialization
+  s.insert(5); - insert elements in set
+  s.insert(5);
+  s.insert(5);
+  s.insert(5);
+  s.insert(1);
+  s.insert(6);
+  s.insert(6);
+  s.insert(0);
+  s.insert(0);
+  s.insert(0);
+
+  For(auto I : s){ - it print all element of set
+  Cout<<i<<endl;
+  }cout<<endl;  
+  OUTPUT
+  0
+  1
+  5
+  6
+
+  Set<int>::iterator it = s.begin();
+  It++;
+  s.erase(it); - it erase element on first position
+  For(auto I : s){
+  Cout<<i<<endl;
+  }
+  Output 
+  0
+  5
+  6
+  Cout<<s.count(5)<<endl; - it tells you weather no. exist or not
+
+  Some Basic Functions Associated with Set: 
+  • begin() – Returns an iterator to the first element in the set.
+  • end() – Returns an iterator to the theoretical element that follows the last element in the set.
+  • size() – Returns the number of elements in the set.
+  • max_size() – Returns the maximum number of elements that the set can hold.
+  • empty() – Returns whether the set is empty.
+
+MAP
+
+  Some basic functions associated with Map:
+  1) begin() – Returns an iterator to the first element in the map
+  2) end() – Returns an iterator to the theoretical element that follows last element in the map
+  3) size() – Returns the number of elements in the map
+  4) max_size() – Returns the maximum number of elements that the map can hold
+  5) empty() – Returns whether the map is empty
+  6) pair insert(keyvalue, mapvalue) – Adds a new element to the map
+  7) erase(iterator position) – Removes the element at the position pointed by the iterator
+  8) erase(const g)– Removes the key value ‘g’ from the map
+  9) clear() – Removes all the elements from the map
+
+
+#include<iostream>
+#include<map>
+Using namespace std;
+Int main(){
+Map<int,string> m;
+m[1] = "babber";
+m[13] = "kumar";
+m[2]= "love";
+
+m.insert({5,"bheem"});
+Cout<<"before erase"<<endl;
+For(auto i:m){
+Cout<<i.first<<" "<<i.second<<endl;
+}
+Cout<<"finding 13 ->"<<m.count(13)<<endl;
+For(auto i:m){
+Cout<<i.first<<" "i.second<<endl;
+}cout<<endl<<endl;
+
+Auto it = m.find(5);
+
+For(auto i=it;i!=m.end();i++){
+Cout<<(*i).first<<endl;
+}
+OUTPUT
+Before erase
+1 babbar
+2 love
+5 bheem
+13 kumar
+Finding -13 -> 0
+After erase
+1 babber
+2 love
+5 bheem
+13 kumar
+
+5 
+13
+
+
+Algorithm
+  Non-Manipulating Algorithms
+  1) sort(first_iterator, last_iterator) – To sort the given vector.
+  2) reverse(first_iterator, last_iterator) – To reverse a vector.
+  3) *max_element (first_iterator, last_iterator) – To find the maximum element of a vector.
+  4) *min_element (first_iterator, last_iterator) – To find the minimum element of a vector.
+  5) accumulate(first_iterator, last_iterator, initial value of sum) – Does the summation of vector elements
+  6) count(first_iterator, last_iterator,x) – To count the occurrences of x in vector.
+  7) find(first_iterator, last_iterator, x) – Returns an iterator to the first occurence of x in vector and points to last address of vector ((name_of_vector).end()) if element is not present in vector.
+#include<iostream>
+#include<algorithm>
+#include<vector>
+Using namespace std;
+Int main(){
+Vector<int> v;
+v.push_back(1);
+v.push_back(3);
+v.push_back(6);
+v.push_back(7);
+Cout<<"finding 6->"<<binary_search(v.begin(),v.end(),6)<<endl;
+Cout<<"lower bound->"<<lower_bound(v.begin(),v.end(),6)-v.begin()<<endl;
+Cout<<"upper bound->"<<upper_bound(v.begin(),v.end(),4)-v.begin()<<endl;
+Int a = 3;
+Int b = 5;
+Min(a,b)
+Max(a,b)
+Swap(a,b)
+Sort(v.begin(), v.end());
+Reverse(a.begin(),a.end());
+Rotate(v.begin(),v.begin()+1,v.end());
+
+output
+Finding6-> 1
+Lower bound-> 2
+Upper bound-> 2
+Max->5
+Min->3
+a-> 5
+1367
+
+
+
+
+
